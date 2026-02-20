@@ -1,0 +1,128 @@
+.admin-container {
+  display: flex;
+}
+
+/* Main Content */
+.admin-content {
+  flex: 1;
+  padding: 50px;
+  min-height: 100vh;
+
+  background: linear-gradient(
+    135deg,
+    #1E4E8C,
+    #2D6CB3
+  );
+
+  color: white;
+}
+
+.admin-content h1 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ================= FORM ================= */
+
+.admin-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.admin-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.admin-form input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.admin-form button {
+  padding: 12px 25px;
+  border-radius: 8px;
+  border: none;
+
+  background: #F7941D;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.admin-form button:hover {
+  background: #e67e00;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+/* ================= TABLE ================= */
+
+.table-container {
+  margin-top: 40px;
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-table thead {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 15px;
+  text-align: left;
+}
+
+.admin-table th {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.admin-table tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.no-data {
+  text-align: center;
+  padding: 20px;
+}
+
+/* ================= DELETE BUTTON ================= */
+
+.delete-btn {
+  padding: 8px 18px;
+  border-radius: 6px;
+  border: none;
+
+  background: #ff4d4d;
+  color: white;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}

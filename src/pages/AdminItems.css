@@ -1,0 +1,138 @@
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #2b61a1;
+}
+
+.admin-content {
+  flex: 1;
+  padding: 40px;
+}
+
+.admin-content h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* THE FORM CONTAINER */
+.admin-form {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 25px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* ROW 1: Name, Price, Stock, SKU */
+.input-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+/* ROW 2: Category, Brand, File, Button */
+.controls-group {
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 2fr 1fr;
+  gap: 15px;
+  align-items: end;
+}
+
+.admin-form input, .admin-form select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  outline: none;
+  font-size: 14px;
+}
+
+.file-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.file-box label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+}
+
+.submit-btn {
+  background-color: #ff981f;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 45px;
+}
+
+.submit-btn:hover {
+  background-color: #e68a1a;
+  transform: translateY(-2px);
+}
+
+/* TABLE STYLING */
+.table-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  background: #1e3a8a;
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.admin-table td {
+  padding: 15px;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table-img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+select {
+  background-color: #2D6CB3;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+select option {
+  background-color: #ffffff;
+  color: #000;
+}

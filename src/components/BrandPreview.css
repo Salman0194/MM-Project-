@@ -1,0 +1,52 @@
+.brand-preview {
+  padding: 70px 40px;
+  text-align: center;
+
+  /* Clean light section like first image */
+  background: #f5f7fa;
+}
+
+/* Title */
+.brand-preview h2 {
+  margin-bottom: 40px;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #1E4E8C;
+}
+
+/* Horizontal brand strip */
+.brand-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Remove card styling completely */
+.brand-card {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* Brand name style */
+.brand-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hide description completely */
+.brand-card p {
+  display: none;
+}
+
+/* Hover effect */
+.brand-card h3:hover {
+  color: #1E4E8C;
+  transform: scale(1.05);
+}

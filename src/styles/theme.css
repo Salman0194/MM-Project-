@@ -1,0 +1,30 @@
+:root {
+  /* Primary Colors */
+  --primary-dark: #0F2F57;
+  --primary-blue: #1E4E8C;
+  --primary-light: #2D6CB3;
+  --sky-blue: #4FA3E3;
+  --background-light: #E6F2FB;
+
+  /* Accent */
+  --accent-orange: #F7941D;
+
+  /* Text */
+  --text-dark: #0F2F57;
+  --text-light: #ffffff;
+}
+
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark),
+    var(--primary-blue),
+    var(--sky-blue)
+  );
+  background-attachment: fixed;
+  color: var(--text-light);
+}
