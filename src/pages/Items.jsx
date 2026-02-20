@@ -152,7 +152,7 @@ const Items = () => {
               {items.map((item) => (
                 <tr key={item.id}>
                   <td>
-                    <img src={`http://localhost:5000/uploads/${item.image}`} alt={item.name} className="table-img" />
+                    <img src={`https://mm-project-backend.onrender.com/uploads/${item.image}`} alt={item.name} className="table-img" />
                   </td>
                   <td>{item.name}</td>
                   <td>₹{item.price}</td>

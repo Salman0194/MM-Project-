@@ -11,7 +11,7 @@ const ItemsPage = () => {
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "https://mm-project-backend.onrender.com";
 
   useEffect(() => {
     fetchBrands();

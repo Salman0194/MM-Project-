@@ -4,7 +4,7 @@ import "./ItemPreview.css";
 
 const ItemPreview = () => {
   const [items, setItems] = useState([]);
-  const BASE_URL = "http://localhost:5000";
+  const BASE_URL = "https://mm-project-backend.onrender.com";
 
   useEffect(() => {
     fetchItems();
