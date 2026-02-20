@@ -17,7 +17,7 @@ const Items = () => {
   const [brandId, setBrandId] = useState("");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
-  
+
   const fileInputRef = useRef(null);
 
   useEffect(() => {
@@ -49,7 +49,7 @@ const Items = () => {
 
   const handleAdd = async (e) => {
     e.preventDefault();
-    
+
     // Safety check for image selection
     if (!image) return alert("Please select an image file.");
 
@@ -105,7 +105,7 @@ const Items = () => {
             <input type="number" placeholder="Stock" value={stock} onChange={(e) => setStock(e.target.value)} />
             <input type="text" placeholder="SKU" value={sku} onChange={(e) => setSku(e.target.value)} />
           </div>
-          
+
           {/* Row 2: Selectors & File Upload */}
           <div className="controls-group">
             <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)} required>
@@ -120,11 +120,11 @@ const Items = () => {
 
             <div className="file-box">
               <label>Product Image</label>
-              <input 
-                type="file" 
-                ref={fileInputRef} 
-                onChange={(e) => setImage(e.target.files[0])} 
-                required 
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={(e) => setImage(e.target.files[0])}
+                required
               />
             </div>
 
@@ -152,7 +152,11 @@ const Items = () => {
               {items.map((item) => (
                 <tr key={item.id}>
                   <td>
-                    <img src={`https://mm-project-backend.onrender.com/uploads/${item.image}`} alt={item.name} className="table-img" />
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="table-img"
+                    />
                   </td>
                   <td>{item.name}</td>
                   <td>₹{item.price}</td>
