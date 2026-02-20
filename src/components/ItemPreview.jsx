@@ -4,7 +4,6 @@ import "./ItemPreview.css";
 
 const ItemPreview = () => {
   const [items, setItems] = useState([]);
-  const BASE_URL = "https://mm-project-backend.onrender.com";
 
   useEffect(() => {
     fetchItems();
@@ -32,9 +31,10 @@ const ItemPreview = () => {
               {item.image ? (
                 <div className="image-wrapper">
                   <img
-                    src={`${BASE_URL}/uploads/${item.id}.jpg`}
+                    src={item.image}
                     alt={item.name}
                     className="item-image"
+                    loading="lazy"
                   />
                 </div>
               ) : (
@@ -43,7 +43,6 @@ const ItemPreview = () => {
 
               <h3>{item.name}</h3>
 
-              {/* FIXED HERE */}
               <p><strong>Brand:</strong> {item.Brand?.name || "N/A"}</p>
               <p><strong>Category:</strong> {item.Category?.name || "N/A"}</p>
 

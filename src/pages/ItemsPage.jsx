@@ -11,8 +11,6 @@ const ItemsPage = () => {
   const [selectedBrand, setSelectedBrand] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  const BASE_URL = "https://mm-project-backend.onrender.com";
-
   useEffect(() => {
     fetchBrands();
     fetchCategories();
@@ -23,13 +21,21 @@ const ItemsPage = () => {
   }, [selectedBrand, selectedCategory]);
 
   const fetchBrands = async () => {
-    const res = await axios.get("/brands");
-    setBrands(res.data);
+    try {
+      const res = await axios.get("/brands");
+      setBrands(res.data);
+    } catch (error) {
+      console.error("Error fetching brands:", error);
+    }
   };
 
   const fetchCategories = async () => {
-    const res = await axios.get("/categories");
-    setCategories(res.data);
+    try {
+      const res = await axios.get("/categories");
+      setCategories(res.data);
+    } catch (error) {
+      console.error("Error fetching categories:", error);
+    }
   };
 
   const fetchItems = async () => {
@@ -41,7 +47,7 @@ const ItemsPage = () => {
       const res = await axios.get(query);
       setItems(res.data);
     } catch (error) {
-      console.error(error);
+      console.error("Error fetching items:", error);
     }
   };
 
@@ -79,22 +85,27 @@ const ItemsPage = () => {
           </select>
         </div>
 
+        {/* ITEMS GRID */}
         <div className="items-grid">
-          {items.map((item) => (
-            <div key={item.id} className="item-card">
+          {items.length === 0 ? (
+            <p className="no-items">No items found.</p>
+          ) : (
+            items.map((item) => (
+              <div key={item.id} className="item-card">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="item-image"
+                  loading="lazy"
+                />
 
-              <img
-                src={`${BASE_URL}/uploads/${item.image}`}
-                alt={item.name}
-                className="item-image"
-              />
-
-              <h3>{item.name}</h3>
-              <p><strong>Brand:</strong> {item.Brand?.name}</p>
-              <p><strong>Category:</strong> {item.Category?.name}</p>
-              <p className="price">₹ {item.price}</p>
-            </div>
-          ))}
+                <h3>{item.name}</h3>
+                <p><strong>Brand:</strong> {item.Brand?.name || "N/A"}</p>
+                <p><strong>Category:</strong> {item.Category?.name || "N/A"}</p>
+                <p className="price">₹ {item.price}</p>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </>
